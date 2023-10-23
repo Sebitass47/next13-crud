@@ -5,6 +5,8 @@ const loadTasks = async () => {
   return await prisma.task.findMany();
 }
 
+export const dynamic = 'force-dynamic'
+
 const HomePage = async () => {
   const tasks = await loadTasks();
   return (
