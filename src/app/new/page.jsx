@@ -4,10 +4,8 @@ import { useEffect, useState } from "react";
 
 
 const NewPage =  ({ params }) => {
-  const savedInfo = localStorage.getItem('inputsInfo');
-  const initialInfo = savedInfo ? JSON.parse(savedInfo) : {};
   const router = useRouter();
-  const [inputsInfo, setInfo] = useState(initialInfo);
+  const [inputsInfo, setInfo] = useState({});
   const [showAlertError, setShowAlertError] = useState(false);
   const [showAlertWarning, setShowAlertWarning] = useState(false);
   const [showAlertSuccess, setShowAlertSuccess] = useState(false);
@@ -19,6 +17,10 @@ const NewPage =  ({ params }) => {
     .then(data => {
       setInfo({title: data.title, description: data.description})
     })
+   } else {
+    const savedInfo = localStorage.getItem('inputsInfo');
+    const initialInfo = savedInfo ? JSON.parse(savedInfo) : {};
+    setInfo(initialInfo);
    }
   }, []);
 
