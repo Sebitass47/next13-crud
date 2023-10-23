@@ -9,10 +9,10 @@ const NavBar = () => {
             NextCRUD
           </Link>
         </h3>
-        <ul className="flex gap-x-2 text-lg font-bold">
-          <li>
-            <Link href="/" className="text-slate-300 hover:text-slate-200">
-              Tareas
+        <ul className="flex gap-x-2 text-lg font-bold md:gap-x-5">
+        <li>
+            <Link href="/about" className="text-slate-300 hover:text-slate-200">
+              Nosotros
             </Link>
           </li>
           <li>

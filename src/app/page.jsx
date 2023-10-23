@@ -9,7 +9,7 @@ const HomePage = async () => {
   const tasks = await loadTasks();
   return (
     <section className="container mx-auto">
-      <ul className="grid grid-cols-3 gap-3 mt-10">
+      <ul className="grid  gap-3 grid-cols-1  mt-10 md:grid-cols-3">
         {tasks.map((task) => (
           <TaskCard task={task} key={task.id}/>
         ))}
